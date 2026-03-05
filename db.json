@@ -1,0 +1,10 @@
+{
+    "users":[
+        {
+            "id": 1,
+            "nome": "Fernando",
+            "senha": "123456",
+            "status": true
+        }
+    ]
+}
