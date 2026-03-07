@@ -5,6 +5,12 @@
             "nome": "Fernando",
             "senha": "123456",
             "status": true
+        },
+        {
+            "id": 2,
+            "nome": "Fernando jorge",
+            "senha": "123456",
+            "status": true
         }
     ]
 }

@@ -1,16 +1,19 @@
-import react from "react"
-import Clima from "./clima"
-import Login from "./auth/login"
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import React from "react";
+import Clima from "./Clima";
+import Login from "./auth/login";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
 export default function App() {
   return (
-<BrowserRouter>
-<Routes>
-  <Route path="/Login" element={<Login/>}/>
-  <Route path="/clima" element={<Clima/>}/>
-  <Route path="*" element={<h1>Página não encontrada</h1>}/>
-</Routes>
-</BrowserRouter>
-)
+    <BrowserRouter>
+      <Routes>
+        {/* Rota raiz redireciona para login */}
+        <Route path="/" element={<Navigate to="/login" replace />} />
+        
+        <Route path="/login" element={<Login />} />
+        <Route path="/clima" element={<Clima />} />
+        <Route path="*" element={<h1>Página não encontrada</h1>} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
