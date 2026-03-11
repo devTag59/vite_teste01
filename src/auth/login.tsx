@@ -15,6 +15,10 @@ function Login() {
   useEffect(()=>{
     getUsers()
   },[])
+  useEffect(()=>{
+    document.title=`Find CLima-${title}`
+  })
+  const [title,setTitle]=useState("Pagina de Login")
   const getUsers=async()=>{
     try{
       const users=await fetch("http://10.1.19.2:3000/users")
@@ -22,6 +26,7 @@ function Login() {
       setUsers(dataUsers)
       console.log(dataUsers)
     }catch(error){
+      setTitle("Erro de internet")
       console.error("Error fetching weather data:", error);
       console.log("Nenhum usuário encontrado")
     }
@@ -33,6 +38,7 @@ function Login() {
       navigate("/clima")
     }else{
       console.log("Usuário não encontrado")
+      setTitle("Usuário não encontrado")
     }
   }
   return (
@@ -52,7 +58,7 @@ function Login() {
         w-3/4'
         value={nome}
         onChange={(e)=>setNome(e.target.value)}
-        type="text" placeholder='Digite sua cidade'/>
+        type="text" placeholder='Qual o seu email'/>
           <button className='bg-blue-500
                         text-white
                         font-bold
