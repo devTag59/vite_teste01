@@ -1,4 +1,3 @@
-import React from "react";
 import Clima from "./Clima";
 import Login from "./auth/login";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";

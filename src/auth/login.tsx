@@ -42,37 +42,136 @@ function Login() {
     }
   }
   return (
-    <div className='bg-gray-900 h-screen flex items-center justify-center gap-4'>
-      <div className='h-full w-full flex-col content-center items-center gap-4 justify-center text-center'>
-            <p className='text-white font-bold text-5xl'>BEM VINDO AO FIND-CLIMA</p>
-            <p className='text-white'>Informe seu email e senha para continuar</p>
-        </div>
-        <div className='h-full w-full inline-flex items-center justify-center'>
-          <div style={{color:'white', font:"bold"}} className='w-1/2 h-1/2 flex flex-col items-center justify-evenly bg-gray-800 mb-4 rounded-3xl'> 
-        <p className='text-5xl'>Informe o seu email</p>
-        <input className=' outline-none
-        border-2 
-        border-gray-300 
-        rounded-lg 
-        p-3
-        w-3/4'
+    <div className='
+  bg-gray-900 
+  min-h-screen           {/* usa min-h-screen em vez de h-screen */}
+  flex 
+  flex-col               {/* mobile: empilhado */}
+  lg:flex-row            {/* lg: lado a lado */}
+  items-center 
+  justify-center 
+  gap-4 
+  p-4
+'>
+  {/* Lado esquerdo - texto */}
+  <div className='
+    w-full 
+    lg:w-1/2              {/* lg: metade da tela */}
+    flex 
+    flex-col 
+    items-center 
+    lg:items-start       {/* lg: alinhado à esquerda */}
+    justify-center 
+    text-center 
+    lg:text-left         {/* lg: texto à esquerda */}
+    p-6
+    space-y-4
+  '>
+    <p className='
+      text-white 
+      font-bold 
+      text-3xl            {/* mobile: 30px */}
+      sm:text-4xl         {/* sm: 36px */}
+      md:text-5xl         {/* md: 48px */}
+      lg:text-6xl         {/* lg: 60px */}
+      leading-tight
+    '>
+      BEM VINDO AO<br />FIND-CLIMA
+    </p>
+    <p className='
+      text-white 
+      text-sm             {/* mobile: 14px */}
+      sm:text-base        {/* sm: 16px */}
+      md:text-lg          {/* md: 18px */}
+      opacity-90
+    '>
+      Informe seu email e senha para continuar
+    </p>
+  </div>
+  
+  {/* Lado direito - formulário */}
+  <div className='
+    w-full 
+    lg:w-1/2              {/* lg: metade da tela */}
+    flex 
+    items-center 
+    justify-center 
+    p-4
+  '>
+    <div className='
+      w-full 
+      max-w-md            {/* largura máxima de 448px */}
+      flex 
+      flex-col 
+      items-center 
+      justify-center 
+      bg-gray-800 
+      p-8
+      rounded-3xl
+      shadow-2xl
+      space-y-6
+    '>
+      <div className='text-center space-y-2'>
+        <p className='
+          text-white 
+          font-bold 
+          text-3xl        {/* mobile: 30px */}
+          md:text-4xl     {/* md: 36px */}
+        '>
+          Login
+        </p>
+        <p className='
+          text-gray-400 
+          text-sm
+        '>
+          Informe seu email para continuar
+        </p>
+      </div>
+      
+      <input 
+        className='
+          outline-none
+          border-2 
+          border-gray-600 
+          rounded-lg 
+          p-4
+          w-full
+          bg-gray-700
+          text-white
+          placeholder-gray-400
+          focus:border-blue-500
+          transition-colors
+          duration-300
+        '
         value={nome}
-        onChange={(e)=>setNome(e.target.value)}
-        type="text" placeholder='Qual o seu email'/>
-          <button className='bg-blue-500
-                        text-white
-                        font-bold
-                        w-3/4
-                        py-2 px-4
-                        rounded-lg
-                        hover:bg-blue-600
-                        transition-colors
-                        duration-300' onClick={handleLogin}>Entrar
-          </button>
-        
-        </div>
-      </div>   
+        onChange={(e) => setNome(e.target.value)}
+        type="text" 
+        placeholder='Digite seu email'
+      />
+      
+      <button 
+        className='
+          bg-blue-500
+          text-white
+          font-bold
+          w-full
+          py-4
+          px-6
+          rounded-lg
+          hover:bg-blue-600
+          transition-colors
+          duration-300
+          transform
+          hover:scale-105
+          active:scale-95
+          text-lg
+        ' 
+        onClick={handleLogin}
+      >
+        Entrar
+      </button>
     </div>
-  )
+  </div>   
+</div>  )
 }
 export default Login

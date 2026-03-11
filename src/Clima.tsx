@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useEffect} from 'react'
 import axios from "axios"
 
 interface WeatherData {
@@ -11,14 +11,16 @@ function Clima() {
   const [weather, setWeather] = useState<WeatherData[]>([])
   const [iconUrl,setIconUrl]=useState("")
   const API_KEY='481390f99d35ba6cce4bb6670ce28239'
-  const[cidade,setCidade]=useState('')
+  const[cidade,setCidade]=useState("")
   const[onLoading,setLoading]=useState(false)
   const handleKeyPress =(event: { key: string })=>{
     if(event.key==='Enter'){
       getClima()
     }
   }
-
+useEffect(()=>{
+  document.title="Find Clima - Página de clima"
+})
   const getClima=async()=>{
     try{
       if(!cidade) return;
