@@ -1,18 +1,45 @@
 {
-    "users":[
-        {
-            "id": 1,
-            "nome": "Fernando",
-            "senha": "123456",
-            "status": true
-        },
-        {
-            "id": 2,
-            "nome": "Fernando jorge",
-            "senha": "123456",
-            "status": true
-        },{
-            "link":"https://torgamez.org/burnout-paradise/"
-        }
-    ]
+  "users": [
+    {
+      "id": "1",
+      "nome": "Fernando",
+      "senha": "123456",
+      "status": true
+    },
+    {
+      "id": "2",
+      "nome": "Fernando jorge",
+      "senha": "123456",
+      "status": true
+    },
+    {
+      "link": "https://torgamez.org/burnout-paradise/",
+      "id": "bfd4"
+    },
+    {
+      "id": "dc11",
+      "nome": "teste",
+      "senha": "123456",
+      "status": true
+    },
+    {
+      "id": "c423",
+      "nome": "teste",
+      "senha": "123456",
+      "status": true
+    },
+    {
+      "id": "dddd",
+      "nome": "teste",
+      "senha": "123456",
+      "status": true
+    },
+    {
+      "id": "ce8d",
+      "nome": "fernanando",
+      "senha": "11111",
+      "status": true
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
