@@ -27,6 +27,12 @@
       "nome": "fernanando",
       "senha": "11111",
       "status": true
+    },
+    {
+      "id": "682e",
+      "nome": "",
+      "senha": "",
+      "status": true
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
