@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 interface User {
   nome: string;
@@ -148,6 +148,26 @@ function Login() {
         type="text" 
         placeholder='Digite seu email'
       />
+      <input 
+        className='
+          outline-none
+          border-2 
+          border-gray-600 
+          rounded-lg 
+          p-4
+          w-full
+          bg-gray-700
+          text-white
+          placeholder-gray-400
+          focus:border-blue-500
+          transition-colors
+          duration-300
+        '
+        value={nome}
+        onChange={(e) => setNome(e.target.value)}
+        type="text" 
+        placeholder='Digite seu email'
+      />
       
       <button 
         className='
@@ -170,6 +190,27 @@ function Login() {
       >
         Entrar
       </button>
+      
+        <button 
+          className='
+            bg-blue-500
+            text-white
+            font-bold
+            w-full
+            py-4
+            px-6
+            rounded-lg
+            hover:bg-blue-600
+            transition-colors
+            duration-300
+            transform
+            hover:scale-105
+            active:scale-95
+            text-lg
+          ' >
+          <Link to="/logon">Criar Conta</Link>
+        </button>
+      
     </div>
   </div>   
 </div>  )

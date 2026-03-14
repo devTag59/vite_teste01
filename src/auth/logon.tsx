@@ -21,27 +21,70 @@ function Logon() {
     return(<>
     <div className="
     bg-gray-900
-    h-screen
-    w-full 
-    lg:w-1/2
+    min-h-screen
     flex 
     flex-col
     lg:flex-row 
-    items-center 
-    lg:items-start
+    items-center
     justify-center 
     text-center 
-    lg:text-left
+    p-4">
+        <div className="w-full 
+    lg:w-1/2              {/* lg: metade da tela */}
+    flex 
+    flex-col 
+    items-center 
+    lg:items-start       {/* lg: alinhado à esquerda */}
+    justify-center 
+    text-center 
+    lg:text-left         {/* lg: texto à esquerda */}
     p-6
     space-y-4">
-        <div className="w-full lg:w-1/2 h-full bg-amber-600">
-            <p style={{color:"white", font:"bold"}}>Registrar novo usuário</p>
-            <p style={{color:"white", font:"bold"}}>Digite seu nome e senha para criar uma conta</p>
+        <div className="
+        flex
+        flex-col
+        items-center
+        ">
+            <p className="
+            text-3xl
+            sm:text-4xl
+            md:text-5xl
+            lg:text-6xl
+            leading-tight
+            font-bold
+            text-white
+            
+            ">Registrar novo usuário</p>
+            <p className="
+            text-sm
+            sm:text-base
+            md:text-lg
+            lg:text-xl
+            text-gray-300
+            ">Digite seu nome e senha para criar uma conta</p>
         </div>
-        <div className="w-screen h-full flex flex-col items-center justify-center gap-4">
+        </div>
+        <div className="w-full 
+    lg:w-1/2              {/* lg: metade da tela */}
+    flex 
+    items-center 
+    justify-center 
+    p-4">
+        <div className="
+        w-full
+        max-w-md
+        shadow-2xl
+        flex
+        flex-col
+        bg-gray-800
+        p-6
+        rounded-lg
+        space-y-4
+        ">
             <input type="text" placeholder="Nome" value={nome} onChange={(e)=>setNome(e.target.value)}/>
             <input type="password" placeholder="Senha" value={senha} onChange={(e)=>setSenha(e.target.value)}/>
             <button onClick={setUsers}>Registrar</button>
+        </div>
         </div>
     </div>
     </>)
