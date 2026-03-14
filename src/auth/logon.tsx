@@ -19,25 +19,31 @@ function Logon() {
     
 }
     return(<>
-    <div className="w-full 
-    lg:w-1/2              {/* lg: metade da tela */}
+    <div className="
+    bg-gray-900
+    h-screen
+    w-full 
+    lg:w-1/2
     flex 
-    flex-col 
+    flex-col
+    lg:flex-row 
     items-center 
-    lg:items-start       {/* lg: alinhado à esquerda */}
+    lg:items-start
     justify-center 
     text-center 
-    lg:text-left         {/* lg: texto à esquerda */}
+    lg:text-left
     p-6
     space-y-4">
-    <div>
-        <text style={{color:"white", font:"bold"}}>Registrar novo usuário</text>
-        <text style={{color:"white", font:"bold"}}>Digite seu nome e senha para criar uma conta</text>
-    </div>
-        <input type="text" placeholder="Nome" value={nome} onChange={(e)=>setNome(e.target.value)}/>
-        <input type="password" placeholder="Senha" value={senha} onChange={(e)=>setSenha(e.target.value)}/>
-        <button onClick={setUsers}>Registrar</button>
+        <div className="w-full lg:w-1/2 h-full bg-amber-600">
+            <p style={{color:"white", font:"bold"}}>Registrar novo usuário</p>
+            <p style={{color:"white", font:"bold"}}>Digite seu nome e senha para criar uma conta</p>
         </div>
+        <div className="w-screen h-full flex flex-col items-center justify-center gap-4">
+            <input type="text" placeholder="Nome" value={nome} onChange={(e)=>setNome(e.target.value)}/>
+            <input type="password" placeholder="Senha" value={senha} onChange={(e)=>setSenha(e.target.value)}/>
+            <button onClick={setUsers}>Registrar</button>
+        </div>
+    </div>
     </>)
 }
 export default Logon
