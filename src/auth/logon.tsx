@@ -35,7 +35,7 @@ function Logon() {
     lg:flex-row 
     items-center
     justify-center 
-    text-center 
+    text-center
     p-4">
         <div className="w-full 
     lg:w-1/2              {/* lg: metade da tela */}
@@ -74,9 +74,20 @@ function Logon() {
     p-4">
         {/*formulário*/}
         <Modal isOpen={open} onClose={() => setOpen(false)}>
-  <h2>Olá!</h2>
-  <p>Preencha todos os campos</p>
-</Modal>
+            <div className="
+            min-w-sm
+            text-white
+            bg-blue-900
+              flex
+              flex-col
+              p-6
+              rounded-2xl
+            ">
+                <p className="
+                font-bold
+                "> Por favor <br/>Preencha todos os campos</p>
+            </div>
+        </Modal>
         <div className="
         w-full
         max-w-md
