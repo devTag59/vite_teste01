@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import Modal from '../modal';
 
 interface User {
   nome: string;
@@ -11,7 +12,9 @@ interface User {
 function Login() {
   const navigate = useNavigate()
   const[users,setUsers]=useState<User[]>([])
+  const [open, setOpen] = useState(false);
   const[nome,setNome]=useState('')
+  const[senha,setSenha]=useState('')
   useEffect(()=>{
     getUsers()
   },[])
@@ -20,7 +23,8 @@ function Login() {
   })
   const [title,setTitle]=useState("Pagina de Login")
   const getUsers=async()=>{
-    try{
+     
+      try{
       const users=await fetch("http://10.1.19.2:3000/users")
       const dataUsers =await users.json()
       setUsers(dataUsers)
@@ -30,15 +34,20 @@ function Login() {
       console.error("Error fetching weather data:", error);
       console.log("Nenhum usuário encontrado")
     }
+    
   }
   const handleLogin=()=>{
-    const userFind=users.find((user)=>user.nome===nome)
+    if (!nome || !senha) {
+      setOpen(true)
+    }else{
+    const userFind=users.find((user)=>user.nome===nome && user.senha===senha)
     if(userFind){
       console.log("Usuário encontrado:", userFind)
       navigate("/clima")
     }else{
       console.log("Usuário não encontrado")
       setTitle("Usuário não encontrado")
+    }
     }
   }
   return (
@@ -53,6 +62,21 @@ function Login() {
   gap-4 
   p-4
 '>
+  <Modal isOpen={open} onClose={() => setOpen(false)}>
+   <div className="
+            min-w-sm
+            text-white
+            bg-blue-900
+              flex
+              flex-col
+              p-6
+              rounded-2xl
+            ">
+                <p className="
+                text-center font-bold
+                "> Por favor <br/>Preencha todos os campos</p>
+            </div>
+  </Modal>
   {/* Lado esquerdo - texto */}
   <div className='
     w-full 
@@ -163,10 +187,10 @@ function Login() {
           transition-colors
           duration-300
         '
-        value={nome}
-        onChange={(e) => setNome(e.target.value)}
-        type="text" 
-        placeholder='Digite seu email'
+        value={senha}
+        onChange={(e) => setSenha(e.target.value)}
+        type="password" 
+        placeholder='Digite sua senha'
       />
       
       <button 
