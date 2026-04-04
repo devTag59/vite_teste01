@@ -12,7 +12,7 @@ function Logon() {
             return
         }else{
  try{
-        const users=await axios.post("http://10.1.19.2:3000/users",{
+        const users=await axios.post("http://192.168.8.10:3000/users",{
             nome:nome,
             senha:senha,
             status:true
@@ -91,7 +91,8 @@ function Logon() {
         <div className="
         w-full
         max-w-md
-        shadow-2xl
+        shadow-none
+        md:shadow-2xl
         flex
         flex-col
         bg-gray-800

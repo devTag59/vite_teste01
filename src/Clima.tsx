@@ -50,7 +50,7 @@ useEffect(()=>{
     <>
       <div className='bg-gray-800 h-screen flex flex-col items-center justify-center gap-4'>
         <p className='text-white font-bold text-5xl'>BEM VINDO AO FIND-CLIMA</p>
-        <div style={{color:'white', font:"bold"}} className='w-72 h-72 flex flex-col items-center justify-evenly bg-gray-600 mb-4 rounded-3xl'>
+        <div style={{color:'white', font:"bold"}} className='w-72 h-92 flex flex-col items-baseline md:items-center justify-evenly bg-gray-800 md:bg-gray-600 mb-4 rounded-3xl'>
         <p>{Tempo}</p>
         <p>{weather.length > 0 ? weather[0].description : "Sem dados de clima"}</p>
         <img src={iconUrl}/>

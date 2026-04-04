@@ -25,7 +25,7 @@ function Login() {
   const getUsers=async()=>{
      
       try{
-      const users=await fetch("http://10.1.19.2:3000/users")
+      const users=await fetch("http://192.168.8.10:3000/users")
       const dataUsers =await users.json()
       setUsers(dataUsers)
       console.log(dataUsers)
@@ -132,7 +132,8 @@ function Login() {
       bg-gray-800 
       p-8
       rounded-3xl
-      shadow-2xl
+      shadow-none
+      md:shadow-2xl
       space-y-6
     '>
       <div className='text-center space-y-2'>
