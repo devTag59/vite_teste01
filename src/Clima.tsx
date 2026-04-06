@@ -1,6 +1,6 @@
 import { useState,useEffect} from 'react'
 import axios from "axios"
-
+import { Toggles } from './components/toggles'
 interface WeatherData {
   description: string;
   [key: string]: any;
@@ -48,30 +48,32 @@ useEffect(()=>{
 
   return (
     <>
-      <div className='bg-gray-800 h-screen flex flex-col items-center justify-center gap-4'>
+      <div className='bg-gray-800 h-screen flex p-2 flex-col items-baseline justify-center gap-4'>
         <p className='text-white font-bold text-5xl'>BEM VINDO AO FIND-CLIMA</p>
-        <div style={{color:'white', font:"bold"}} className='w-72 h-92 flex flex-col items-baseline md:items-center justify-evenly bg-gray-800 md:bg-gray-600 mb-4 rounded-3xl'>
-        <p>{Tempo}</p>
-        <p>{weather.length > 0 ? weather[0].description : "Sem dados de clima"}</p>
-        <img src={iconUrl}/>
-        <p>Digite o nome da sua cidade</p>
-        <input className=' outline-none
-        border-2 
-        border-gray-300 
+        <div className='flex flex-col md:flex-row items-center justify-between gap-4'>
+          <input className=' outline-none
+        border-none 
+        border-blue-900 
         rounded-lg 
         p-3 
-        w-64
-        focus:border-blue-500
-        focus:ring-2
-        focus:ring-blue-200
-        focus:ring-opacity-50
-        transition-all
-        duration-200' type="text"
+        w-auto
+        md:w-lg
+        bg-gray-500
+        text-white placeholder:text-blue-300' type="text"
         placeholder='Digite o nome da cidade'
         value={cidade} onKeyPress={handleKeyPress }
         onChange={(e) => setCidade(e.target.value)}/>
         <button className='bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
-        onClick={getClima} disabled={onLoading}>{onLoading?"Carregando":"Clique para pesquisar"}</button>
+        onClick={getClima} disabled={onLoading}>{onLoading?"Carregando":"Clique e pesquise"}</button>
+        </div>
+        <Toggles/>
+        <div style={{color:'white', font:"bold"}} className='w-72 h-92 flex flex-col items-center justify-evenly bg-gray-800 md:bg-gray-600 mb-4 rounded-3xl'>
+        <p>{Tempo}</p>
+        <p>{weather.length > 0 ? weather[0].description : "Sem dados de clima"}</p>
+        <img src={iconUrl}/>
+        <p>Digite o nome da sua cidade</p>
+        
+        
         </div>
       </div>
     </>

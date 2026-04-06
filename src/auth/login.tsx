@@ -25,7 +25,7 @@ function Login() {
   const getUsers=async()=>{
      
       try{
-      const users=await fetch("http://192.168.8.10:3000/users")
+      const users=await fetch("http://192.168.8.17:3000/users")
       const dataUsers =await users.json()
       setUsers(dataUsers)
       console.log(dataUsers)
