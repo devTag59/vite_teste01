@@ -66,15 +66,16 @@ useEffect(()=>{
         <button className='bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
         onClick={getClima} disabled={onLoading}>{onLoading?"Carregando":"Clique e pesquise"}</button>
         </div>
+        <div className='flex flex-col md:flex-row justify-around'>
         <Toggles/>
         <div style={{color:'white', font:"bold"}} className='w-72 h-92 flex flex-col items-center justify-evenly bg-gray-800 md:bg-gray-600 mb-4 rounded-3xl'>
         <p>{Tempo}</p>
         <p>{weather.length > 0 ? weather[0].description : "Sem dados de clima"}</p>
         <img src={iconUrl}/>
         <p>Digite o nome da sua cidade</p>
-        
-        
         </div>
+        </div>
+        
       </div>
     </>
   )

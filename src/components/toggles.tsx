@@ -31,7 +31,7 @@ useEffect(()=>{
    <div>
       <h2>Clima das cidades</h2>
       {climas.map((cidade, index) => (
-        <form key={index} style={{margin: "10px", padding: "10px" }}>
+        <form key={index} style={{margin: "10px", padding: "10px", font:"bold", backgroundColor: "#333", color: "white", borderRadius: "8px"}}>
           <h3>{cidade.name}</h3>
           <label>
             Temperatura:
