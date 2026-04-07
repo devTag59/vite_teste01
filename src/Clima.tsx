@@ -56,7 +56,7 @@ function Clima() {
   };
 
   return (
-    <div className="bg-gray-800 h-screen flex p-2 flex-col items-baseline justify-center gap-4">
+    <div className="bg-gray-800 w-full h-screen flex p-2 flex-col items-baseline justify-center gap-4">
       <p className="text-white font-bold text-5xl">BEM VINDO AO FIND-CLIMA</p>
 
       <div className="flex flex-col md:flex-row items-center justify-between gap-4">
@@ -77,9 +77,9 @@ function Clima() {
         </button>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+      <div className="w-full h-full flex flex-col md:flex-row items-center justify-around gap-4">
         <Toggles />
-        <div className="w-92 h-92 flex flex-col items-center justify-evenly bg-gray-800 md:bg-gray-600 mb-4 rounded-3xl text-white font-bold">
+        <div className="w-3xl h-full flex flex-col items-center justify-evenly bg-gray-800 md:bg-gray-600 mb-4 rounded-3xl text-white font-bold">
           <div className="flex flex-col md:flex-row items-center justify-center gap-4">
             <div className="text-2xl">{cidade || "sua cidade"}
               <p>{temperatura} °C</p>

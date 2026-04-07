@@ -1,0 +1,9 @@
+@layer utilities {
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+  .scrollbar-hidden {
+    -ms-overflow-style: none;  /* IE e Edge antigo */
+    scrollbar-width: none;     /* Firefox */
+  }
+}
