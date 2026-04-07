@@ -29,7 +29,7 @@ export function Toggles() {
   }, []);
 
   return (
-    <div className="h-full w-full px-6 text-white items-center justify-center overflow-scroll overflow-x-hidden scrollbar-hidden">
+    <div className="h-full w-full px-6 text-white items-center justify-center overflow-y-scroll overflow-x-hidden scrollbar-hidden">
       <h2 className="text-2xl font-bold mb-4">Clima das cidades</h2>
       {climas.map((cidade, index) => (
         <form
