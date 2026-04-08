@@ -34,10 +34,10 @@ export function Toggles() {
       {climas.map((cidade, index) => (
         <form
           key={index}
-          className="mb-6 flex flex-col md:flex-row justify-between gap-2 items-start rounded-lg shadow-lg bg-gray-800 shadow-gray-900 p-2"
+          className="mb-4 max-h-32 flex flex-col md:flex-row justify-between gap-2 items-start rounded-lg shadow-lg bg-gray-800 shadow-gray-900 p-2"
         >
           <div className='flex flex-col justify-around'>
-            <h3 className="text-xl font-semibold mb-4">{cidade.name}</h3>
+            <h3 className="text-xs font-semibold">{cidade.name}</h3>
             <img
               src={`https://openweathermap.org/img/wn/${cidade.weather[0].icon}@2x.png`}
               alt={cidade.weather[0].description}

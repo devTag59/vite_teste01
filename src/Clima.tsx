@@ -110,10 +110,10 @@ function Clima() {
       )}
 
       {/* Main Content - Weather Display and Toggles Side by Side */}
-      <div className="w-full h-72 max-w-6xl flex flex-col-reverse lg:flex-row-reverse items-stretch justify-center gap-6 mt-4">
+      <div className="w-full min-h-92 max-h-screen max-w-6xl flex flex-col-reverse lg:flex-row-reverse items-center justify-center gap-6">
         
         {/* Weather Display - Always Visible */}
-        <div className="flex-1 bg-gray-700/50 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden max-w-2xl">
+        <div className="flex-1 bg-gray-700/50 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden max-w-3xl">
           {weather && temperatura !== null ? (
             <div className="flex flex-col items-center justify-center p-8 gap-4 h-full">
               <div className="text-center">
@@ -151,7 +151,7 @@ function Clima() {
         </div>
 
         {/* Toggles Component */}
-        <div className="flex-1 bg-gray-700/50 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden min-w-20">
+        <div className="flex-1 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden h-80 min-w-20">
           <Toggles />
         </div>
       </div>
