@@ -113,7 +113,7 @@ function Clima() {
       <div className="w-full min-w-screen flex flex-col lg:flex-row-reverse items-center justify-center p-2 gap-2">
         
         {/* Weather Display - Always Visible */}
-        <div className="flex-1 bg-gray-700/50 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden">
+        <div className="lg:w-1/2 lg:h-80 max-lg:screen w-screen bg-gray-700/50 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden">
           {weather && temperatura !== null ? (
             <div className="flex flex-col items-center justify-center p-8 gap-4 h-full">
               <div className="text-center">
