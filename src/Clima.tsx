@@ -110,10 +110,10 @@ function Clima() {
       )}
 
       {/* Main Content - Weather Display and Toggles Side by Side */}
-      <div className="w-full min-h-92 max-h-screen max-w-6xl flex flex-col-reverse lg:flex-row-reverse items-center justify-center gap-6">
+      <div className="w-full min-w-screen flex flex-col lg:flex-row-reverse items-center justify-center p-2 gap-2">
         
         {/* Weather Display - Always Visible */}
-        <div className="flex-1 bg-gray-700/50 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden max-w-3xl">
+        <div className="flex-1 bg-gray-700/50 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden">
           {weather && temperatura !== null ? (
             <div className="flex flex-col items-center justify-center p-8 gap-4 h-full">
               <div className="text-center">
@@ -128,7 +128,7 @@ function Clima() {
                 </p>
               </div>
               {iconUrl && (
-                <div className="flex-shrink-0">
+                <div className="shrink-0">
                   <img
                     src={iconUrl}
                     alt={weather.description || "Ícone do clima"}
@@ -151,7 +151,7 @@ function Clima() {
         </div>
 
         {/* Toggles Component */}
-        <div className="flex-1 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden h-80 min-w-20">
+        <div className="bg-slate-500 items-center rounded-2xl overflow-hidden w-full h-screen max-lg:h-screen lg:w-1/2 lg:h-80">
           <Toggles />
         </div>
       </div>

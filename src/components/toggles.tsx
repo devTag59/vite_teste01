@@ -29,12 +29,12 @@ export function Toggles() {
   }, []);
 
   return (
-    <div className="h-full w-full px-6 text-white items-center justify-center overflow-y-scroll overflow-x-hidden scrollbar-hidden">
+    <div className="h-full w-full text-white items-center justify-center overflow-y-scroll overflow-x-hidden scrollbar-hidden">
       <h2 className="text-2xl font-bold mb-4">Clima das cidades</h2>
       {climas.map((cidade, index) => (
         <form
           key={index}
-          className="mb-4 max-h-32 flex flex-col md:flex-row justify-between gap-2 items-start rounded-lg shadow-lg bg-gray-800 shadow-gray-900 p-2"
+          className="mb-4 min-h-32 max-h-32 flex grid-cols-2 flex-col md:flex-row justify-between items-start rounded-lg shadow-lg bg-gray-800 shadow-gray-900 p-2"
         >
           <div className='flex flex-col justify-around'>
             <h3 className="text-xs font-semibold">{cidade.name}</h3>
