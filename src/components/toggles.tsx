@@ -8,7 +8,7 @@ export function Toggles() {
   useEffect(() => {
     const getClima = async () => {
       try {
-        const cidades = ["São Paulo", "Rio de Janeiro", "Belo Horizonte"];
+        const cidades = ["Uige", "Benguela", "Soyo"];
         const promises = cidades.map((cidade) =>
           axios.get("https://api.openweathermap.org/data/2.5/weather", {
             params: {
@@ -29,12 +29,11 @@ export function Toggles() {
   }, []);
 
   return (
-    <div className="h-full w-full text-white items-center justify-center overflow-y-scroll overflow-x-hidden scrollbar-hidden">
-      <h2 className="text-2xl font-bold mb-4">Clima das cidades</h2>
+    <div className="h-full w-full text-white items-center justify-center overflow-y-scroll overflow-x-hidden scrollbar-hidden gap-10">
       {climas.map((cidade, index) => (
         <form
           key={index}
-          className="mb-4 min-h-32 max-h-32 flex grid-cols-2 flex-col md:flex-row justify-between items-start rounded-lg shadow-lg bg-gray-800 shadow-gray-900 p-2"
+          className="mb-4 min-h-32 max-h-fit grid grid-cols-2 lg:grid-cols-2 lg:flex lg:flex-row justify-between items-start rounded-lg shadow-lg bg-gray-800 shadow-gray-900 p-2 gap-6"
         >
           <div className='flex flex-col justify-around'>
             <h3 className="text-xs font-semibold">{cidade.name}</h3>

@@ -75,7 +75,7 @@ function Clima() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-800 to-gray-900 flex p-4 flex-col items-center justify-center gap-6">
+    <div className="min-h-screen bg-gradient-to-br from-gray-800 to-gray-900 flex p-4 flex-col items-center justify-center gap-6 overflow-hidden">
       {/* Header */}
       <div className="items-center justify-center flex flex-col gap-2 text-center">
         <h1 className="text-white font-bold text-5xl tracking-tight">FIND-CLIMA</h1>
@@ -94,7 +94,7 @@ function Clima() {
           disabled={loading}
         />
         <button
-          className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed min-w-[120px]"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed min-w-fit"
           onClick={getClima}
           disabled={loading}
         >
@@ -151,7 +151,7 @@ function Clima() {
         </div>
 
         {/* Toggles Component */}
-        <div className="bg-slate-500 items-center rounded-2xl overflow-hidden w-full h-screen max-lg:h-screen lg:w-1/2 lg:h-80">
+        <div className="items-center rounded-2xl overflow-hidden w-full h-screen max-lg:h-screen lg:w-1/2 lg:h-80">
           <Toggles />
         </div>
       </div>
