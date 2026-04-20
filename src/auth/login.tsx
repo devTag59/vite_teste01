@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import Modal from '../modal';
+import Modal from '../components/modal';
 
 interface User {
   nome: string;

@@ -1,14 +1,21 @@
 import axios from "axios";
-import {useState} from "react";
-import Modal from "../modal";
+import {useEffect, useState} from "react";
+import Modal from "../components/modal";
+import { useNavigate } from "react-router";
+
 function Logon() {
+    const navigate = useNavigate()
     const [open, setOpen] = useState(false);
     const [nome,setNome]=useState("")
     const [senha,setSenha]=useState("")
+    const [text,setText]=useState("")
+    useEffect(()=>{
+        document.title="Find Clima - Registrar"
+    })
     const setUsers=async()=>{
         if(!nome || !senha){
+            setText("Preencha todos os campos")
             setOpen(true)
-            console.log("Preencha todos os campos")
             return
         }else{
  try{
@@ -17,6 +24,10 @@ function Logon() {
             senha:senha,
             status:true
         })
+        if(users.status===201){
+           setOpen(true)
+           setText(`Usuário criado com sucesso!`)
+        }
         console.log(users.data)
     }catch(error){
         console.error("Erro tentando aceder os usuarios:", error);
@@ -74,7 +85,7 @@ function Logon() {
     p-4">
         {/*formulário*/}
         <Modal isOpen={open} onClose={() => setOpen(false)}>
-            <div className="
+            <div onClick={()=>navigate("/login")} className="
             min-w-sm
             text-white
             bg-blue-900
@@ -82,10 +93,28 @@ function Logon() {
               flex-col
               p-6
               rounded-2xl
+              justify-center
+              items-center
             ">
                 <p className="
                 font-bold
-                "> Por favor <br/>Preencha todos os campos</p>
+                ">{text}</p>
+                <button className="
+                w-fit
+                mt-4
+                bg-blue-500
+                hover:bg-blue-600
+                text-white
+                font-bold
+                py-2
+                px-4
+                rounded-lg
+                transition-colors
+                duration-300
+                " onClick={()=> navigate("/login")}>
+                    Voltar para a pagina de login
+                </button>
+
             </div>
         </Modal>
         <div className="
