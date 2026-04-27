@@ -19,7 +19,7 @@ function Logon() {
             return
         }else{
  try{
-        const users=await axios.post("http://192.168.8.17:3000/users",{
+        const users=await axios.post("https://api.jsonbin.io/v3/b/69efa28b856a6821897be31c",{
             nome:nome,
             senha:senha,
             status:true

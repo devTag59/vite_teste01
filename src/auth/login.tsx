@@ -25,7 +25,7 @@ function Login() {
   const getUsers=async()=>{
      
       try{
-      const users=await fetch("http://192.168.8.17:3000/users")
+      const users=await fetch("https://api.jsonbin.io/v3/b/69efa28b856a6821897be31c")
       const dataUsers =await users.json()
       setUsers(dataUsers)
       console.log(dataUsers)
