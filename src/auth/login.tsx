@@ -25,13 +25,13 @@ function Login() {
   const getUsers=async()=>{
      
       try{
-      const users=await fetch("https://api.jsonbin.io/v3/b/69efa28b856a6821897be31c")
+      const users=await fetch("https://api.jsonbin.io/v3/b/69efa28b856a6821897be31c/latest")
       const dataUsers =await users.json()
       setUsers(dataUsers)
       console.log(dataUsers)
     }catch(error){
       setTitle("Erro de internet")
-      console.error("Error fetching weather data:", error);
+      console.error("Erro ao encontrar o usuário:", error);
       console.log("Nenhum usuário encontrado")
     }
     

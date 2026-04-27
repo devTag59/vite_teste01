@@ -19,7 +19,7 @@ function Logon() {
             return
         }else{
  try{
-        const users=await axios.post("https://api.jsonbin.io/v3/b/69efa28b856a6821897be31c",{
+        const users=await axios.post("https://api.jsonbin.io/v3/b/69efa28b856a6821897be31c/latest",{
             nome:nome,
             senha:senha,
             status:true
