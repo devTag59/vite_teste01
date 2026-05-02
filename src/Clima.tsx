@@ -75,7 +75,7 @@ function Clima() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-800 to-gray-900 flex p-4 flex-col items-center justify-center gap-6 overflow-hidden">
+    <div className="min-h-screen lg:bg-gray-900 bg-gray-950 flex p-4 flex-col items-center justify-center gap-6 overflow-hidden">
       {/* Header */}
       <div className="items-center justify-center flex flex-col gap-2 text-center">
         <h1 className="text-white font-bold text-5xl tracking-tight">FIND-CLIMA</h1>
