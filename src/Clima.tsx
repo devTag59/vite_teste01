@@ -110,10 +110,10 @@ function Clima() {
       )}
 
       {/* Main Content - Weather Display and Toggles Side by Side */}
-      <div className="w-full min-w-screen flex flex-col lg:flex-row-reverse items-center justify-center p-2 gap-2">
+      <div className="w-fit flex flex-col lg:flex-row-reverse items-center justify-center p-2 gap-2">
         
         {/* Weather Display - Always Visible */}
-        <div className="lg:w-1/2 lg:h-80 max-lg:screen w-screen bg-gray-700/50 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden">
+        <div className="lg:w-1/2 lg:h-80 max-lg:screen w-screen bg-gray-700/50 backdrop-blur-sm rounded-2xl overflow-hidden">
           {weather && temperatura !== null ? (
             <div className="flex flex-col items-center justify-center p-8 gap-4 h-full">
               <div className="text-center">
@@ -138,7 +138,7 @@ function Clima() {
               )}
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-center p-8 h-full min-h-[300px]">
+            <div className="flex flex-col items-center justify-center p-8 h-full">
               <div className="text-center text-gray-400">
                 <svg className="w-20 h-20 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
@@ -151,7 +151,7 @@ function Clima() {
         </div>
 
         {/* Toggles Component */}
-        <div className="items-center rounded-2xl overflow-hidden w-full h-screen max-lg:h-screen lg:w-1/2 lg:h-80">
+        <div className="items-center rounded-2xl overflow-hidden w-fit h-fit max-lg:h-screen lg:w-1/2 lg:h-80">
           <Toggles />
         </div>
       </div>

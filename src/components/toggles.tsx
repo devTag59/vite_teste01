@@ -29,14 +29,14 @@ export function Toggles() {
   }, []);
 
   return (
-    <div className="h-full w-full text-white items-center justify-center overflow-y-scroll overflow-x-hidden scrollbar-hidden gap-10">
+    <div className="h-full w-full text-white items-center justify-center overflow-y-scroll overflow-x-hidden scrollbar-hidden gap-6 p-4">
       {climas.map((cidade, index) => (
         <form
           key={index}
-          className="mb-4 min-h-32 max-h-fit grid grid-cols-2 lg:grid-cols-2 lg:flex lg:flex-row justify-between items-start rounded-lg shadow-lg bg-gray-800 shadow-gray-900 p-2 gap-6"
+          className="mb-4 min-h-32 max-h-fit min-w-96 grid grid-cols-2 lg:grid-cols-2 lg:flex lg:flex-row justify-between items-start rounded-lg shadow-lg bg-gray-800 shadow-gray-900 p-6 gap-2"
         >
           <div className='flex flex-col justify-around'>
-            <h3 className="text-xs font-semibold">{cidade.name}</h3>
+            <h3 className="text-xl font-semibold">{cidade.name}</h3>
             <img
               src={`https://openweathermap.org/img/wn/${cidade.weather[0].icon}@2x.png`}
               alt={cidade.weather[0].description}
@@ -45,7 +45,7 @@ export function Toggles() {
           </div>
 
           <label className="flex flex-col gap-4 items-baseline justify-around">
-            <span className="text-2xl font-bold">Temperatura</span>
+            <span className="text-xl font-bold">Temperatura</span>
             <input
               type="text"
               value={`${cidade.main.temp} °C`}
@@ -55,17 +55,17 @@ export function Toggles() {
           </label>
 
           <label className="flex flex-col gap-4 items-baseline justify-around">
-            <span className="text-2xl font-bold ">Condição</span>
+            <span className="text-xl font-bold ">Condição</span>
             <input
               type="text"
               value={cidade.weather[0].description}
               readOnly
-              className="w-full cursor-pointer outline-none border-none"
+              className="w-full cursor-pointer outline-none border-none "
             />
           </label>
 
           <label className="flex flex-col gap-4 items-baseline justify-around">
-            <span className="text-2xl font-bold">Umidade</span>
+            <span className="text-xl font-bold">Umidade</span>
             <input
               type="text"
               value={`${cidade.main.humidity}%`}
