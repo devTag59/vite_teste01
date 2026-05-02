@@ -33,7 +33,7 @@ export function Toggles() {
       {climas.map((cidade, index) => (
         <form
           key={index}
-          className="mb-4 min-h-32 max-h-fit min-w-96 grid grid-cols-2 lg:grid-cols-2 lg:flex lg:flex-row justify-between items-start rounded-lg shadow-lg bg-gray-800 shadow-gray-900 p-6 gap-2"
+          className="mb-4 min-h-32 max-h-fit min-w-96 grid grid-cols-2  lg:grid-cols-2 lg:flex lg:flex-row justify-between items-start rounded-lg bg-gray-800 shadow-gray-900 p-6 gap-2"
         >
           <div className='flex flex-col justify-around'>
             <h3 className="text-xl font-semibold">{cidade.name}</h3>
