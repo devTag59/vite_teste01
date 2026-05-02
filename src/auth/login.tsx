@@ -31,7 +31,7 @@ function Login() {
         }
       })
       const dataUsers =await users.json()
-      setUsers(dataUsers)
+      setUsers(dataUsers.record.users)
       console.log(dataUsers)
     }catch(error){
       setTitle("Erro de internet")
