@@ -27,7 +27,7 @@ function Login() {
       try{
       const users=await fetch("https://api.jsonbin.io/v3/b/69efa28b856a6821897be31c/latest",{
         headers:{
-          "X-Master-Key":"$2a$10$Rk/bYXkdIIOsIGme/JtdzOH8rpAG9zu6DnR54iakKht5ivGx3ZxfO"
+          "X-Access-Key":"$2a$10$Rk/bYXkdIIOsIGme/JtdzOH8rpAG9zu6DnR54iakKht5ivGx3ZxfO"
         }
       })
       const dataUsers =await users.json()
