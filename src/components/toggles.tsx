@@ -29,7 +29,7 @@ export function Toggles() {
   }, []);
 
   return (
-    <div className="h-full w-full text-white items-center justify-center overflow-y-scroll overflow-x-hidden scrollbar-hidden gap-6 p-4">
+    <div className="h-full w-full text-white items-center justify-center overflow-y-visible overflow-x-hidden scrollbar-hidden gap-6 p-4">
       {climas.map((cidade, index) => (
         <form
           key={index}

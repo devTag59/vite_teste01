@@ -51,11 +51,12 @@ function Logon() {
         // Sucesso!
         setText("Conta criada com sucesso! Você será redirecionado para o login.")
         setOpen(true)
-        
+        console.log("Usuário criado:", data.user)
         // Fecha o modal e redireciona após 2 segundos
-        setTimeout(() => {
+        /*setTimeout(() => {
           navigate("/login")
         }, 2000)
+        */
       }
     } catch (error) {
       setText("Erro de conexão. Tente novamente.")
@@ -118,7 +119,7 @@ function Logon() {
 
   return (
     <>
-      <div className="bg-gray-900 min-h-screen flex flex-col lg:flex-row items-center justify-center text-center p-4">
+      <div className="bg-gray-900 min-h-screen flex flex-col lg:flex-row items-center justify-center text-center">
         {/* Lado esquerdo - Texto */}
         <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start justify-center text-center lg:text-left p-6 space-y-4">
           <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight font-bold text-white">

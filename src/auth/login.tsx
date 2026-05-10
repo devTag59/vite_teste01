@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { supabase } from "../lib/supabase"
+import { supabase} from "../lib/supabase"
 import { Link, useNavigate } from 'react-router-dom'
 import Modal from '../components/modal';
 
@@ -13,8 +13,8 @@ function Login() {
   useEffect(() => {
   console.log('Supabase está funcionando?', !!supabase)
 }, [])
-  const handleLogin = async (e) => {          // Adicionado 'async'
-    e.preventDefault()
+  const handleLogin = async () => {          // Adicionado 'async'
+
     
     if (!email || !password) {
       setErrorMessage('Por favor, preencha todos os campos')
