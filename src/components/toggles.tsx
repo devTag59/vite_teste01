@@ -14,7 +14,8 @@ export function Toggles() {
             params: {
               appid: '481390f99d35ba6cce4bb6670ce28239',
               q: cidade,
-              units: 'metric'
+              units: 'metric',
+              lang:"pt_br"
             },
           })
         );
@@ -54,7 +55,7 @@ export function Toggles() {
             />
           </label>
 
-          <label className="flex flex-col gap-4 items-baseline justify-around">
+          <label className=" w-screenflex flex-col gap-4 items-baseline justify-around">
             <span className="text-xl font-bold ">Condição</span>
             <input
               type="text"
