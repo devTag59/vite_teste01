@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Toggles } from "./components/toggles";
+import { useAuth } from "./auth/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 interface WeatherData {
   description: string;
@@ -10,6 +12,8 @@ interface WeatherData {
 }
 
 function Clima() {
+   const { user, signOut } = useAuth();
+  const navigate = useNavigate();
   const [temperatura, setTemperatura] = useState<number | null>(null);
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [iconUrl, setIconUrl] = useState("");
@@ -19,7 +23,10 @@ function Clima() {
   const [error, setError] = useState("");
 
   const API_KEY = "481390f99d35ba6cce4bb6670ce28239";
-
+  const handleLogout = async () => {
+    await signOut();
+    navigate("/login", { replace: true });
+  };
   const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
       getClima();
@@ -73,9 +80,20 @@ function Clima() {
       setLoading(false);
     }
   };
-
+  
   return (
     <div className="min-h-screen lg:bg-gray-900 bg-gray-950 flex p-4 flex-col items-center justify-center gap-6 overflow-hidden">
+      {/* Barra de utilizador */}
+      <div className="w-full max-w-md flex justify-between items-center text-sm text-gray-300">
+        <span>Olá, {user?.email}</span>
+        <button
+          onClick={handleLogout}
+          className="text-red-400 hover:text-red-300 underline"
+        >
+          Sair
+        </button>
+      </div>
+
       {/* Header */}
       <div className="items-center justify-center flex flex-col gap-2 text-center">
         <h1 className="text-white font-bold text-5xl tracking-tight">FIND-CLIMA</h1>
